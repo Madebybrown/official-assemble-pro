@@ -1,0 +1,28 @@
+import React from "react";
+import { Link } from "react-router-dom";
+import images from "../components/Data";
+
+export default function ProductsGrid() {
+  return (
+    <div className="grid grid-cols-2 grid-rows-3 gap-6 col-span-2 row-span-6">
+      {images.map((image) => {
+        return (
+          <div
+            key={image.id}
+            className="bg-gray-300 rounded-lg flex justify-center shadow-lg items-center p-4 cursor-pointer hover:bg-gray-400 duration-300"
+          >
+            <div className="w-full h-full">
+              <Link to="/product">
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  className="h-full w-full block object-cover hover:opacity-70 duration-300 rounded-lg"
+                />
+              </Link>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
