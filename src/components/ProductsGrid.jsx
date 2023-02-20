@@ -9,14 +9,14 @@ export default function ProductsGrid() {
         return (
           <div
             key={image.id}
-            className="bg-gray-300 rounded-lg flex justify-center shadow-lg items-center p-4 cursor-pointer hover:bg-gray-400 duration-300"
+            className="bg-gray-300 dark:bg-white rounded-xl flex justify-center shadow-lg items-center cursor-pointer hover:bg-gray-400 duration-300"
           >
             <div className="w-full h-full">
               <Link to="/product">
                 <img
                   src={image.src}
                   alt={image.alt}
-                  className="h-full w-full block object-cover hover:opacity-70 duration-300 rounded-lg"
+                  className="h-full w-full block object-cover hover:opacity-70 duration-300 rounded-xl"
                 />
               </Link>
             </div>
