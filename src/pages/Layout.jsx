@@ -21,7 +21,7 @@ const Layout = () => {
             </button>
           </header>
 
-          <main className="h-screen w-screen bg-white dark:bg-gray-800 dark:text-white overflow-hidden">
+          <main className="h-full w-full bg-white dark:bg-gray-800 dark:text-white overflow-hidden">
             <Outlet />
           </main>
 
