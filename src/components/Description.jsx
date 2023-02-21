@@ -10,7 +10,7 @@ export default function Description() {
         <p>
           A productivity app that helps users streamline their workflow and
           optimize their time management through customizable task lists,
-          including images, videos and project management features.
+          images, videos and project management features.
         </p>
       </div>
     </div>
