@@ -16,7 +16,7 @@ const Layout = () => {
             <button>
               <BsFillMoonFill
                 onClick={() => setDarkMode(!darkMode)}
-                className=" cursor-pointer text-2xl mr-10"
+                className=" cursor-pointer text-xl mr-10"
               />
             </button>
           </header>

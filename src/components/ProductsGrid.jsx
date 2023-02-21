@@ -4,7 +4,7 @@ import images from "../components/Data";
 
 export default function ProductsGrid() {
   return (
-    <div className="grid grid-cols-2 grid-rows-3 gap-6 col-span-2 row-span-6">
+    <div className="grid grid-cols-2 grid-rows-3 gap-4 col-span-2 row-span-6">
       {images.map((image) => {
         return (
           <div
