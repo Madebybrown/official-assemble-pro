@@ -15,7 +15,8 @@ export default function ContactForm() {
           </h2>
           <p className="mb-8 lg:mb-10 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl">
             Got a technical issue? Want to send feedback about a beta feature?
-            Need details about how <span className="font-bold">AssemblePro</span> works? Let us know.
+            Need details about how{" "}
+            <span className="font-bold">AssemblePro</span> works? Let us know.
           </p>
 
           <form onSubmit={handleSubmit} className="space-y-8">
@@ -42,7 +43,7 @@ export default function ContactForm() {
                 errors={state.errors}
               />
               <label
-                for="message"
+                htmlFor="message"
                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400"
               >
                 Your message

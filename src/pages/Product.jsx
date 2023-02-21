@@ -1,3 +1,5 @@
+import React from "react";
+
 const Product = () => {
   return (
     <div className="p-8 flex justify-center items-center h-full w-full">

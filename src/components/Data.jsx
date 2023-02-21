@@ -9,33 +9,33 @@ const images = [
   {
     id: "1",
     src: Cables,
-    alt: "Cables"
+    alt: "Cables",
   },
   {
     id: "2",
     src: Laser,
-    alt: "Laser"
+    alt: "Laser",
   },
   {
     id: "3",
     src: Machinery,
-    alt: "Machinery"
+    alt: "Machinery",
   },
   {
     id: "4",
     src: MotorColor,
-    alt: "MotorColor"
+    alt: "MotorColor",
   },
   {
     id: "5",
     src: Printing,
-    alt: "Printing"
+    alt: "Printing",
   },
   {
     id: "6",
     src: Rework,
-    alt: "Rework"
-  }
+    alt: "Rework",
+  },
 ];
 
 export default images;

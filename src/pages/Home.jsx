@@ -1,6 +1,7 @@
-import ImageSlider from "../components/ImageSlider";
+import React from "react";
 import Description from "../components/Description";
 import ProductsGrid from "../components/ProductsGrid";
+import VideoMontage from "../components/VideoMontage";
 
 const Home = () => {
   return (
@@ -9,7 +10,7 @@ const Home = () => {
       <ProductsGrid />
 
       {/* Image + video montage */}
-      <ImageSlider />
+      <VideoMontage />
 
       {/* App Description */}
       <Description />

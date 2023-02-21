@@ -1,9 +1,8 @@
-import React, {useState} from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import Logo from "../assets/static/Logo.png";
 
 export default function Navbar() {
-  
   return (
     <div className="flex justify-between items-center px-8 w-full">
       <div className="m-4">
