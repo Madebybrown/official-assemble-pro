@@ -62,13 +62,15 @@ export default function ContactForm() {
                 errors={state.errors}
               />
             </div>
-            <button
-              type="submit"
-              disabled={state.submitting}
-              className="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-blue-500 sm:w-fit hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-            >
-              Submit
-            </button>
+            <div className="w-full">
+              <button
+                type="submit"
+                disabled={state.submitting}
+                className="py-3 px-5 text-sm font-medium text-center text-white rounded-lg w-full bg-blue-500  hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              >
+                Submit
+              </button>
+            </div>
           </form>
         </div>
       </section>
