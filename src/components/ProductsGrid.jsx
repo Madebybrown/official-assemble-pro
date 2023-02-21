@@ -12,7 +12,7 @@ export default function ProductsGrid() {
             className="bg-gray-300 dark:bg-white rounded-xl flex justify-center shadow-lg items-center cursor-pointer hover:bg-gray-400 duration-300"
           >
             <div className="w-full h-full">
-              <Link to="/product">
+              <Link to={`/product/${image.id}`}>
                 <img
                   src={image.src}
                   alt={image.alt}
