@@ -1,6 +1,6 @@
-import React from 'react'
+import React from "react";
 import { useParams } from "react-router-dom";
-import images from "./Data"
+import images from "./Data";
 
 function ProductView() {
   // Get the ID of the product from the URL using the useParams hook
@@ -19,17 +19,29 @@ function ProductView() {
       <div className="grid grid-cols-2 grid-rows-2 w-full h-full gap-4">
         {/* If the product has articles, render a section for them */}
         {image.articles && (
-          <div className="bg-gray-300 dark:bg-gray-900 p-4 flex uppercase gap-3 font-semibold justify-center items-center rounded-xl">
-            <h2 className="font-bold uppercase">Articles</h2>
-            <p>|</p>
-            {/* Render a list of the articles */}
-            <ul className="flex gap-3">
-              {image.articles.split(", ").map((article, index) => (
-                <li key={index}>{article}</li>
-              ))}
+          <div className="bg-gray-300 dark:bg-gray-900 p-4 flex uppercase gap-3 font-semibold justify-center items-start rounded-xl">
+            {/* Render a list of the articles props */}
+            <ul className="flex items-start">
+              <li className="mx-7">
+                <span className="font-bold">Art.Num</span> <br />{" "}
+                <span className="text-blue-600 text-xs">{image.articles.artnum}</span>
+              </li>
+              <li className="mx-7">
+                <span className="font-bold">Art.Name</span> <br />{" "}
+                <span className="text-xs capitalize">{image.articles.artname}</span>
+              </li>
+              <li className="mx-7">
+                <span className="font-bold">Amount</span> <br />{" "}
+                <span className="text-xs">{image.articles.amount}</span>
+              </li>
+              <li className="mx-7">
+                <span className="font-bold">Location</span> <br />{" "}
+                <span className="text-xs">{image.articles.location}</span>
+              </li>
             </ul>
           </div>
         )}
+
         {/* If the product has videos, render a section for them */}
         {image.video && (
           <div className="bg-gray-300 dark:bg-gray-900 p-4 flex uppercase gap-3 font-semibold justify-center items-center rounded-xl">
@@ -71,7 +83,7 @@ function ProductView() {
         )}
       </div>
     </div>
-  )
+  );
 }
 
 export default ProductView;
