@@ -1,11 +1,17 @@
 import React from "react";
 import {AiOutlineCopyrightCircle} from 'react-icons/ai'
 
+// Footer component that shows the copyright information
 export default function Footer() {
   return (
     <div className="flex justify-center items-center">
       <p className="text-sm text-gray-600 dark:text-white flex justify-center items-center gap-1">
-        2023 copyright <AiOutlineCopyrightCircle /> Madebybrown | all rights reserved.
+        {/* Year and company name */}
+        2023 AssemblePro
+        {/* Copyright icon */} 
+        <AiOutlineCopyrightCircle />
+        {/* Creator name and all rights reserved */}
+        Madebybrown | all rights reserved.
       </p>
     </div>
   );

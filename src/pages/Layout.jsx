@@ -5,27 +5,33 @@ import Navbar from "../components/Navbar";
 import { BsFillMoonFill } from "react-icons/bs";
 
 const Layout = () => {
+  // Define a state variable for the dark mode state and a function to update it
   const [darkMode, setDarkMode] = useState(false);
 
   return (
     <>
       <div className={darkMode ? "dark" : ""}>
         <div className="flex flex-col h-screen">
-          <header className="h-16 bg-gray-100 dark:bg-gray-900 dark:text-white flex justify-center items-center">
+          {/* Render the Navbar component */}
+          <header className="h-16 bg-white text-black dark:bg-gray-800 dark:text-white flex justify-center items-center">
             <Navbar />
+
+            {/* Render the MoonFill icon as a button */}
             <button>
               <BsFillMoonFill
                 onClick={() => setDarkMode(!darkMode)}
-                className=" cursor-pointer text-xl mr-10"
+                className="hover:scale-105 duration-300 cursor-pointer text-xl mr-10 active:scale-95"
               />
             </button>
           </header>
 
-          <main className="h-full w-full bg-white dark:bg-gray-800 dark:text-white overflow-hidden">
+          {/* Render the Outlet component */}
+          <main className="h-full w-full bg-gray-100 text-black dark:bg-gray-900 dark:text-white overflow-hidden">
             <Outlet />
           </main>
 
-          <footer className="h-20 sticky bottom-0 bg-gray-100 dark:bg-gray-900 dark:text-white flex justify-center">
+          {/* Render the Footer component */}
+          <footer className="h-20 sticky bottom-0 bg-white dark:bg-gray-800 dark:text-white flex justify-center">
             <Footer />
           </footer>
         </div>

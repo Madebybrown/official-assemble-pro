@@ -5,14 +5,12 @@ import VideoMontage from "../components/VideoMontage";
 
 const Home = () => {
   return (
-    <div className="grid grid-cols-5 grid-rows-6 gap-6 p-8 h-full w-full">
-      {/* Products grid */}
+    <div className="grid grid-cols-5 grid-rows-6 gap-6 px-8 py-7 h-full w-full">
+      {/* render ProductsGrid component */}
       <ProductsGrid />
-
-      {/* Image + video montage */}
+      {/* render VideoMontage component */}
       <VideoMontage />
-
-      {/* App Description */}
+      {/* render Description component */}
       <Description />
     </div>
   );

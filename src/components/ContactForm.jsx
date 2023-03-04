@@ -2,7 +2,10 @@ import React from "react";
 import { useForm, ValidationError } from "@formspree/react";
 
 export default function ContactForm() {
+  // Use useForm to initialize form and handle submit
   const [state, handleSubmit] = useForm("xbjeokdb");
+
+  // If form submission is successful, render success message
   if (state.succeeded) {
     return <p>Thanks for you feedback!</p>;
   }
@@ -18,8 +21,9 @@ export default function ContactForm() {
             Need details about how{" "}
             <span className="font-bold">AssemblePro</span> works? Let us know.
           </p>
-
+          {/* Form section */}
           <form onSubmit={handleSubmit} className="space-y-8">
+            {/* Email Label & input */}
             <div>
               <label
                 htmlFor="email"
@@ -36,12 +40,16 @@ export default function ContactForm() {
                 required
               />
             </div>
+
+            {/* Validation error for email input */}
             <div>
               <ValidationError
                 prefix="Email"
                 field="email"
                 errors={state.errors}
               />
+
+              {/* Message Label & input */}
               <label
                 htmlFor="message"
                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400"
@@ -56,17 +64,21 @@ export default function ContactForm() {
                 placeholder="Leave your feedback..."
                 required
               />
+
+              {/* Validation error for message input */}
               <ValidationError
                 prefix="Message"
                 field="message"
                 errors={state.errors}
               />
             </div>
+
+            {/* Submit button */}
             <div className="w-full">
               <button
                 type="submit"
                 disabled={state.submitting}
-                className="py-3 px-5 text-sm font-medium text-center text-white rounded-lg w-full bg-blue-500  hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                className="py-3 px-5 text-sm font-medium text-center text-white rounded-lg w-full bg-blue-500 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
               >
                 Submit
               </button>
