@@ -19,12 +19,12 @@ export default function Navbar() {
 
       <div>
         <nav>
-          <ul className="flex text-lg uppercase">
+          <ul className="flex text-lg">
             {/* Home and Contact links */}
-            <li className="hover:opacity-80 font-light hover:scale-105 duration-300 pr-4 text-xl active:scale-95">
+            <li className="hover:opacity-80 font-medium hover:scale-105 duration-300 pr-4 text-xl active:scale-95">
               <Link to="/">Home</Link>
             </li>
-            <li className="hover:opacity-80 font-light hover:scale-105 duration-300 mr-1 text-xl active:scale-95">
+            <li className="hover:opacity-80 font-medium hover:scale-105 duration-300 mr-1 text-xl active:scale-95">
               <Link to="/contact">Contact</Link>
             </li>
           </ul>
