@@ -5,7 +5,7 @@ import {AiOutlineCopyrightCircle} from 'react-icons/ai'
 export default function Footer() {
   return (
     <div className="flex justify-center items-center">
-      <p className="text-sm text-gray-600 dark:text-white flex justify-center items-center gap-1">
+      <p className="text-xs text-gray-600 dark:text-white font-light flex justify-center items-center gap-1">
         {/* Year and company name */}
         2023 AssemblePro
         {/* Copyright icon */} 

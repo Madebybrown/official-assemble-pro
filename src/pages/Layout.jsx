@@ -13,7 +13,7 @@ const Layout = () => {
       <div className={darkMode ? "dark" : ""}>
         <div className="flex flex-col h-screen">
           {/* Render the Navbar component */}
-          <header className="h-16 bg-white text-black dark:bg-black dark:text-white flex justify-center items-center">
+          <header className="h-16 bg-white text-black dark:bg-black dark:text-white flex justify-center items-center dark:border-b-2 dark:border-gray-700">
             <Navbar />
 
             {/* Render the MoonFill icon as a button */}
@@ -31,7 +31,7 @@ const Layout = () => {
           </main>
 
           {/* Render the Footer component */}
-          <footer className="h-20 sticky bottom-0 bg-white dark:bg-black dark:text-white flex justify-center">
+          <footer className="h-20 sticky bottom-0 bg-white dark:bg-black dark:text-white flex justify-center dark:border-t-2 dark:border-gray-700">
             <Footer />
           </footer>
         </div>

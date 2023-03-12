@@ -14,7 +14,7 @@ export default function Navbar() {
           <img
             src={Logo}
             alt="Jensen Logo"
-            className="h-10 select-none active:scale-95 duration-300 hover:opacity-80"
+            className="h-8 select-none active:scale-95 duration-300 hover:opacity-80"
           />
         </Link>
       </div>
