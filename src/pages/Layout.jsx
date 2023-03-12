@@ -17,12 +17,12 @@ const Layout = () => {
             <Navbar />
 
             {/* Render the MoonFill icon as a button */}
-            <button>
+            {/* <button>
               <BsFillMoonFill
                 onClick={() => setDarkMode(!darkMode)}
                 className="hover:scale-105 duration-300 cursor-pointer text-xl mr-10 active:scale-95"
               />
-            </button>
+            </button> */}
           </header>
 
           {/* Render the Outlet component */}

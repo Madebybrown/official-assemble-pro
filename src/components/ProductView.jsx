@@ -1,6 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import images from "./Data";
+import { motion } from "framer-motion";
 
 function ProductView() {
   // Get the ID of the product from the URL using the useParams hook
@@ -15,7 +16,12 @@ function ProductView() {
   }
 
   return (
-    <div className="p-8 flex justify-center items-center h-full w-full">
+    <motion.div
+      initial={{ opacity: 0, x: -50 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.5 }}
+      className="p-8 flex justify-center items-center h-full w-full"
+    >
       <div className="grid grid-cols-2 grid-rows-2 w-full h-full gap-4">
         {/* If the product has articles, render a section for them */}
         {image.articles && (
@@ -24,11 +30,15 @@ function ProductView() {
             <ul className="flex items-start">
               <li className="mx-7">
                 <span className="font-bold">Art.Num</span> <br />{" "}
-                <span className="text-blue-600 text-xs">{image.articles.artnum}</span>
+                <span className="text-blue-600 text-xs">
+                  {image.articles.artnum}
+                </span>
               </li>
               <li className="mx-7">
                 <span className="font-bold">Art.Name</span> <br />{" "}
-                <span className="text-xs capitalize">{image.articles.artname}</span>
+                <span className="text-xs capitalize">
+                  {image.articles.artname}
+                </span>
               </li>
               <li className="mx-7">
                 <span className="font-bold">Amount</span> <br />{" "}
@@ -82,7 +92,7 @@ function ProductView() {
           </div>
         )}
       </div>
-    </div>
+    </motion.div>
   );
 }
 
