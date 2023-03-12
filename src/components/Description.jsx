@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Description() {
   return (
-    <div className="sm:col-span-1 md:col-span-2 lg:col-span-2 sm:row-span-1 md:row-span-1 lg:row-span-1">
+    <div className="sm:col-span-1 md:col-span-3 lg:col-span-2 sm:row-span-1 md:row-span-1 lg:row-span-1">
       <div className="w-full flex justify-start flex-col text-center p-4 h-full select-none">
         <h1 className="font-bold mb-2 text-black tracking-tight dark:text-white uppercase text-5xl">
           Assemble<span className="text-blue-500 font-extralight">Pro</span>

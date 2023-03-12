@@ -6,7 +6,7 @@ import images from "../components/Data";
 export default function ProductsGrid() {
   return (
     // Grid container for the images
-    <div className="grid sm:grid-cols-3 sm:grid-rows-2 md:grid-cols-2 lg:grid-cols-2 md:grid-rows-3 lg:grid-rows-3 gap-4 sm:col-span-1 md:col-span-1 lg:col-span-1 sm:row-span-2 md:row-span-3 lg:row-span-3">
+    <div className="grid sm:grid-cols-3 sm:grid-rows-2 md:grid-cols-3 lg:grid-cols-2 md:grid-rows-2 lg:grid-rows-3 gap-4 sm:col-span-1 md:col-span-3 lg:col-span-1 sm:row-span-2 md:row-span-1 lg:row-span-3">
        {/* Map through the images data and create an image container for each one */}
       {images.map((image) => {
         return (
