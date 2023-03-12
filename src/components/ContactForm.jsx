@@ -11,7 +11,7 @@ export default function ContactForm() {
   }
   return (
     <div>
-      <section className="bg-gray-100 dark:bg-gray-900 p-6 rounded-xl">
+      <section className="bg-gray-100 dark:bg-black p-6 rounded-xl">
         <div className="px-4 py-2 mx-auto max-w-screen-md">
           <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">
             Contact Us

@@ -2,8 +2,8 @@ import React from "react";
 
 export default function Description() {
   return (
-    <div className="col-span-3 row-span-3 mt-4">
-      <div className="w-full flex justify-start flex-col text-center p-10 h-full select-none">
+    <div className="col-span-3 row-span-2">
+      <div className="w-full flex justify-start flex-col text-center p-4 h-full select-none">
         <h1 className="font-bold mb-2 text-black tracking-tight dark:text-white uppercase text-5xl">
           Assemble<span className="text-blue-500 font-extralight">Pro</span>
         </h1>

@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Logo from "../assets/static/Logo.png";
+import {AiFillHome} from "react-icons/ai"
+import {MdEmail} from "react-icons/md"
 
 // This component displays the navigation bar at the top of the page
 export default function Navbar() {
@@ -19,13 +21,13 @@ export default function Navbar() {
 
       <div>
         <nav>
-          <ul className="flex text-lg">
+          <ul className="flex gap-4 pr-4">
             {/* Home and Contact links */}
-            <li className="hover:opacity-80 font-medium hover:scale-105 duration-300 pr-4 text-xl active:scale-95">
-              <Link to="/">Home</Link>
+            <li className="hover:opacity-80 font-medium hover:scale-105 duration-300 pr-4 text-2xl active:scale-95">
+              <Link to="/"><AiFillHome /></Link>
             </li>
-            <li className="hover:opacity-80 font-medium hover:scale-105 duration-300 mr-1 text-xl active:scale-95">
-              <Link to="/contact">Contact</Link>
+            <li className="hover:opacity-80 font-medium hover:scale-105 duration-300 mr-1 text-2xl active:scale-95">
+              <Link to="/contact"><MdEmail /></Link>
             </li>
           </ul>
         </nav>
