@@ -39,37 +39,41 @@ function ProductView() {
       <div className="grid grid-cols-2 grid-rows-2 w-full h-full gap-4">
         {/* If the product has articles, render a section for them */}
         {image.articles && (
-          <div className="bg-gray-300 col-span-1 row-span-1 dark:bg-gray-900 w-full p-4 flex uppercase font-semibold justify-center items-start rounded-xl">
+          <div className="bg-gray-300 col-span-1 row-span-1 dark:bg-gray-900 w-full p-4 flex flex-col uppercase font-semibold justify-between items-start rounded-xl">
             {/* Render a list of the current article */}
-            <ul className="flex w-full justify-between md:text-xs">
-              <li>
+            <ul className="grid grid-cols-4 gap-4 w-full md:text-xs justify-items-center">
+              <li className="col-span-1">
                 <span className="font-bold">Art.Num</span> <br />{" "}
                 <span className="text-blue-600 text-xs">
                   {currentArticle.artnum}
                 </span>
               </li>
-              <li>
+              <li className="col-span-1">
                 <span className="font-bold">Art.Name</span> <br />{" "}
                 <span className="text-xs capitalize">
                   {currentArticle.artname}
                 </span>
               </li>
-              <li>
+              <li className="col-span-1">
                 <span className="font-bold">Amount</span> <br />{" "}
                 <span className="text-xs">{currentArticle.amount}</span>
               </li>
-              <li>
+              <li className="col-span-1">
                 <span className="font-bold">Location</span> <br />{" "}
                 <span className="text-xs">{currentArticle.location}</span>
               </li>
             </ul>
-            <div className="h-full flex items-end">
+
+            <div className="mt-auto flex justify-end items-end w-full">
               <button
+                className="bg-blue-500 hover:bg-blue-700 text-white text-xs font-bold py-1 px-2 rounded ml-auto"
                 onClick={() => {
                   setCurrentArticleIndex(
                     (currentArticleIndex + 1) % image.articles.length
                   );
-                  setCurrentVideoIndex((currentVideoIndex + 1) % image.video.length);
+                  setCurrentVideoIndex(
+                    (currentVideoIndex + 1) % image.video.length
+                  );
                 }}
               >
                 Next
