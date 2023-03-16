@@ -20,21 +20,30 @@ function ProductView() {
     return <p>Image not found</p>;
   }
 
-  const handleNextArticle = () => {
-    // If there are no more articles, start over from the beginning
-    if (currentArticleIndex === image.articles.length - 1) {
-      setCurrentArticleIndex(0);
-    } else {
-      setCurrentArticleIndex(currentArticleIndex + 1);
-    }
-  };
-
   const handleCheckboxChange = (event) => {
     setIsChecked(event.target.checked);
   };
   
   const handleResetButtonClick = () => {
     setIsChecked(false);
+  };
+
+  const handleNextClick = () => {
+    setCurrentArticleIndex((currentArticleIndex + 1) % image.articles.length);
+    setCurrentVideoIndex((currentVideoIndex + 1) % image.video.length);
+    setCurrentChecklistIndex(
+      (currentChecklistIndex + 1) % image.checklist.length
+    );
+    handleResetButtonClick();
+  };
+
+  const handlePrevClick = () => {
+    setCurrentArticleIndex((currentArticleIndex - 1) % image.articles.length);
+    setCurrentVideoIndex((currentVideoIndex - 1) % image.video.length);
+    setCurrentChecklistIndex(
+      (currentChecklistIndex - 1) % image.checklist.length
+    );
+    handleResetButtonClick();
   };
 
   const currentArticle = image.articles[currentArticleIndex];
@@ -87,16 +96,7 @@ function ProductView() {
               <button
                 className="bg-blue-500 hover:bg-blue-700 text-white text-xs font-bold py-1 px-2 rounded ml-auto"
                 onClick={() => {
-                  setCurrentArticleIndex(
-                    (currentArticleIndex + 1) % image.articles.length
-                  );
-                  setCurrentVideoIndex(
-                    (currentVideoIndex + 1) % image.video.length
-                  );
-                  setCurrentChecklistIndex(
-                    (currentChecklistIndex + 1) % image.checklist.length
-                  );
-                  handleResetButtonClick()
+                  handleNextClick()
                 }}
               >
                 Next
@@ -108,16 +108,7 @@ function ProductView() {
                 <button
                   className="bg-blue-500 mr-auto hover:bg-blue-700 text-white text-xs font-bold py-1 px-2 rounded"
                   onClick={() => {
-                    setCurrentArticleIndex(
-                      (currentArticleIndex - 1) % image.articles.length
-                    );
-                    setCurrentVideoIndex(
-                      (currentVideoIndex - 1) % image.video.length
-                    );
-                    setCurrentChecklistIndex(
-                      (currentChecklistIndex - 1) % image.checklist.length
-                    );
-                    handleResetButtonClick()
+                    handlePrevClick()
                   }}
                 >
                   Previous
