@@ -10,6 +10,7 @@ function ProductView() {
   const [currentArticleIndex, setCurrentArticleIndex] = useState(0);
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
   const [currentChecklistIndex, setCurrentChecklistIndex] = useState(0);
+  const [isChecked, setIsChecked] = useState(false);
 
   // Find the product with the specified ID in the images array
   const image = images.find((image) => image.id === id);
@@ -26,6 +27,14 @@ function ProductView() {
     } else {
       setCurrentArticleIndex(currentArticleIndex + 1);
     }
+  };
+
+  const handleCheckboxChange = (event) => {
+    setIsChecked(event.target.checked);
+  };
+  
+  const handleResetButtonClick = () => {
+    setIsChecked(false);
   };
 
   const currentArticle = image.articles[currentArticleIndex];
@@ -87,12 +96,15 @@ function ProductView() {
                   setCurrentChecklistIndex(
                     (currentChecklistIndex + 1) % image.checklist.length
                   );
+                  handleResetButtonClick()
                 }}
               >
                 Next
               </button>
 
-              {currentArticleIndex > 0 || currentVideoIndex > 0 || currentChecklistIndex > 0 ? (
+              {currentArticleIndex > 0 ||
+              currentVideoIndex > 0 ||
+              currentChecklistIndex > 0 ? (
                 <button
                   className="bg-blue-500 mr-auto hover:bg-blue-700 text-white text-xs font-bold py-1 px-2 rounded"
                   onClick={() => {
@@ -105,6 +117,7 @@ function ProductView() {
                     setCurrentChecklistIndex(
                       (currentChecklistIndex - 1) % image.checklist.length
                     );
+                    handleResetButtonClick()
                   }}
                 >
                   Previous
@@ -148,9 +161,10 @@ function ProductView() {
           <div className="bg-gray-300 col-span-1 row-span-1 dark:bg-gray-900 p-4 rounded-xl">
             {/* Render a list of the checklist items */}
             <ul className="flex flex-col gap-3">
-              {image.checklist.map((checklist, index) => (
+              {image.checklist.map((currentChecklist, index) => (
                 <li key={index} className="flex items-center gap-3">
                   <input
+                    checked={isChecked} onChange={handleCheckboxChange}
                     type="checkbox"
                     id={`checklist-${index}`}
                     name={`checklist-${index}`}
