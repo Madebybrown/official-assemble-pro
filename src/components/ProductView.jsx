@@ -57,6 +57,35 @@ function ProductView() {
       className="p-8 flex justify-center items-center h-full w-full container mx-auto"
     >
       <div className="grid grid-cols-2 grid-rows-2 w-full h-full gap-4">
+        {/* If the product has videos, render a section for them */}
+        {image.video && (
+          <div className="bg-gray-300 col-span-1 row-span-2 sm:col-span-2 sm:row-span-1 md:col-span-2 md:row-span-1 lg:col-span-1 lg:row-span-2 dark:bg-gray-900 p-4 flex uppercase gap-3 font-semibold justify-center items-center rounded-xl">
+            {/* Render a list of the videos */}
+            <div className="w-full h-full">
+              {image.video.map((video, index) => (
+                <div
+                  className="w-full h-full"
+                  key={index}
+                  style={{
+                    display: index === currentVideoIndex ? "block" : "none",
+                  }}
+                >
+                  <video
+                    width="100%"
+                    height="auto"
+                    controls
+                    loop
+                    muted
+                    className="block object-cover w-full h-full rounded-xl"
+                  >
+                    <source src={video.op} type="video/mp4" />
+                  </video>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
         {/* If the product has articles, render a section for them */}
         {image.articles && (
           <div className="bg-gray-300 col-span-1 row-span-1 dark:bg-gray-900 w-full p-4 flex flex-col uppercase font-semibold justify-between items-start rounded-xl">
@@ -118,34 +147,6 @@ function ProductView() {
           </div>
         )}
 
-        {/* If the product has videos, render a section for them */}
-        {image.video && (
-          <div className="bg-gray-300 col-span-1 row-span-2 dark:bg-gray-900 p-4 flex uppercase gap-3 font-semibold justify-center items-center rounded-xl">
-            {/* Render a list of the videos */}
-            <div className="w-full h-full">
-              {image.video.map((video, index) => (
-                <div
-                  className="w-full h-full"
-                  key={index}
-                  style={{
-                    display: index === currentVideoIndex ? "block" : "none",
-                  }}
-                >
-                  <video
-                    width="100%"
-                    height="auto"
-                    controls
-                    loop
-                    muted
-                    className="block object-cover w-full h-full rounded-xl"
-                  >
-                    <source src={video.op} type="video/mp4" />
-                  </video>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
 
         {/* If the product has a checklist, render a section for it */}
         {image.checklist && (
