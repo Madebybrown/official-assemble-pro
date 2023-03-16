@@ -72,7 +72,7 @@ function ProductView() {
               </li>
             </ul>
 
-            <div className="mt-auto flex justify-end items-end w-full">
+            <div className="mt-auto flex justify-between flex-row-reverse items-end w-full">
               <button
                 className="bg-blue-500 hover:bg-blue-700 text-white text-xs font-bold py-1 px-2 rounded ml-auto"
                 onClick={() => {
@@ -86,6 +86,22 @@ function ProductView() {
               >
                 Next
               </button>
+
+              {currentArticleIndex > 0 || currentVideoIndex > 0 ? (
+                <button
+                  className="bg-blue-500 mr-auto hover:bg-blue-700 text-white text-xs font-bold py-1 px-2 rounded"
+                  onClick={() => {
+                    setCurrentArticleIndex(
+                      (currentArticleIndex - 1) % image.articles.length
+                    );
+                    setCurrentVideoIndex(
+                      (currentVideoIndex - 1) % image.video.length
+                    );
+                  }}
+                >
+                  Previous
+                </button>
+              ) : null}
             </div>
           </div>
         )}
