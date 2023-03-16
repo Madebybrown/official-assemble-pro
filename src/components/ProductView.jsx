@@ -41,25 +41,33 @@ function ProductView() {
         {image.articles && (
           <div className="bg-gray-300 col-span-1 row-span-1 dark:bg-gray-900 w-full p-4 flex flex-col uppercase font-semibold justify-between items-start rounded-xl">
             {/* Render a list of the current article */}
-            <ul className="grid grid-cols-4 gap-4 w-full md:text-xs justify-items-center">
-              <li className="col-span-1">
-                <span className="font-bold">Art.Num</span> <br />{" "}
-                <span className="text-blue-600 text-xs">
-                  {currentArticle.artnum}
-                </span>
+            <ul className="grid grid-cols-4 gap-4 w-full md:text-xs text-left justify-items-center">
+              <li className="col-span-1 flex flex-col mr-auto">
+                <span className="font-bold">Art.Num</span>
+                {currentArticle.artnums.map((artnumObj) => (
+                  <span
+                    key={artnumObj.artnum}
+                    className="text-blue-600 text-xs"
+                  >
+                    {artnumObj.artnum}
+                  </span>
+                ))}
               </li>
-              <li className="col-span-1">
-                <span className="font-bold">Art.Name</span> <br />{" "}
+
+              <li className="col-span-1 mx-auto flex flex-col">
+                <span className="font-bold">Art.Name</span>
                 <span className="text-xs capitalize">
                   {currentArticle.artname}
                 </span>
               </li>
-              <li className="col-span-1">
-                <span className="font-bold">Amount</span> <br />{" "}
+
+              <li className="col-span-1 ml-auto flex flex-col">
+                <span className="font-bold">Amount</span>
                 <span className="text-xs">{currentArticle.amount}</span>
               </li>
-              <li className="col-span-1">
-                <span className="font-bold">Location</span> <br />{" "}
+
+              <li className="col-span-1 ml-auto flex flex-col">
+                <span className="font-bold">Location</span>
                 <span className="text-xs">{currentArticle.location}</span>
               </li>
             </ul>
@@ -85,21 +93,29 @@ function ProductView() {
         {/* If the product has videos, render a section for them */}
         {image.video && (
           <div className="bg-gray-300 col-span-1 row-span-2 dark:bg-gray-900 p-4 flex uppercase gap-3 font-semibold justify-center items-center rounded-xl">
-            <h2 className="font-bold uppercase">Video</h2>
-            <p>|</p>
             {/* Render a list of the videos */}
-            <ul>
+            <div className="w-full h-full">
               {image.video.map((video, index) => (
-                <li
+                <div
+                  className="w-full h-full"
                   key={index}
                   style={{
                     display: index === currentVideoIndex ? "block" : "none",
                   }}
                 >
-                  {video.op}
-                </li>
+                  <video
+                    width="100%"
+                    height="auto"
+                    controls
+                    loop
+                    muted
+                    className="block object-cover w-full h-full rounded-xl"
+                  >
+                    <source src={video.op} type="video/mp4" />
+                  </video>
+                </div>
               ))}
-            </ul>
+            </div>
           </div>
         )}
 

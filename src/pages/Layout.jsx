@@ -26,7 +26,7 @@ const Layout = () => {
           </header>
 
           {/* Render the Outlet component */}
-          <main className="h-full w-full bg-gray-100 text-black dark:bg-black dark:text-white overflow-hidden">
+          <main className="h-full w-full flex-1 bg-gray-100 text-black dark:bg-black dark:text-white overflow-hidden">
             <Outlet />
           </main>
 

@@ -13,7 +13,7 @@ export default function ProductsGrid() {
           // Individual image container
           <div
             key={image.id}
-            className="bg-gray-300 dark:bg-white rounded-xl flex justify-center shadow-lg items-center cursor-pointer hover:bg-gray-400 duration-300"
+            className="bg-gray-300 col-span-1 sm:col-span-1 md:col-span-1 lg:col-span-1 row-span-1 sm:row-span-1 md:row-span-1 lg:row-span-1 h-full w-full dark:bg-white rounded-xl flex justify-center shadow-lg items-center cursor-pointer hover:bg-gray-400 duration-300"
           >
             <div className="w-full h-full">
               {/* Link to product detail page */}
