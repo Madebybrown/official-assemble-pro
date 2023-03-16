@@ -50,7 +50,7 @@ const images = [
         op: Video,
       },
       {
-        op: Video,
+        op: "NoVideo",
       },
     ],
     checklist: [
@@ -105,7 +105,7 @@ const images = [
         op: Video,
       },
       {
-        op: Video,
+        op: "NoVideo",
       },
     ],
     checklist: [
@@ -160,7 +160,7 @@ const images = [
         op: Video,
       },
       {
-        op: Video,
+        op: "NoVideo",
       },
     ],
     checklist: [
@@ -217,7 +217,7 @@ const images = [
         op: Video,
       },
       {
-        op: Video,
+        op: "NoVideo",
       },
     ],
     checklist: [
@@ -274,7 +274,7 @@ const images = [
         op: Video,
       },
       {
-        op: Video,
+        op: "NoVideo",
       },
     ],
     checklist: [
@@ -331,7 +331,7 @@ const images = [
         op: Video,
       },
       {
-        op: Video,
+        op: "NoVideo",
       },
     ],
     checklist: [

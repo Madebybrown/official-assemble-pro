@@ -149,22 +149,18 @@ function ProductView() {
 
         {/* If the product has a checklist, render a section for it */}
         {image.checklist && (
-          <div className="bg-gray-300 col-span-1 row-span-1 dark:bg-gray-900 p-4 rounded-xl">
+          <div className="bg-gray-300 col-span-1 row-span-1 dark:bg-gray-900 p-4 rounded">
             {/* Render a list of the checklist items */}
             <ul className="flex flex-col gap-3">
-              {image.checklist.map((currentChecklist, index) => (
-                <li key={index} className="flex items-center gap-3">
-                  <input
-                    checked={isChecked} onChange={handleCheckboxChange}
-                    type="checkbox"
-                    id={`checklist-${index}`}
-                    name={`checklist-${index}`}
-                  />
-                  <label htmlFor={`checklist-${index}`}>
-                    {currentChecklist.checklistItem}
-                  </label>
-                </li>
-              ))}
+              <li className="flex items-center gap-3">
+                <input
+                  type="checkbox"
+                  checked={isChecked}
+                  onChange={handleCheckboxChange}
+                  className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                />
+                <label>{currentChecklist.checklistItem}</label>
+              </li>
             </ul>
           </div>
         )}
