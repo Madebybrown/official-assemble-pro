@@ -9,6 +9,7 @@ function ProductView() {
 
   const [currentArticleIndex, setCurrentArticleIndex] = useState(0);
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
+  const [currentChecklistIndex, setCurrentChecklistIndex] = useState(0);
 
   // Find the product with the specified ID in the images array
   const image = images.find((image) => image.id === id);
@@ -28,6 +29,7 @@ function ProductView() {
   };
 
   const currentArticle = image.articles[currentArticleIndex];
+  const currentChecklist = image.checklist[currentChecklistIndex];
 
   return (
     <motion.div
@@ -82,12 +84,15 @@ function ProductView() {
                   setCurrentVideoIndex(
                     (currentVideoIndex + 1) % image.video.length
                   );
+                  setCurrentChecklistIndex(
+                    (currentChecklistIndex + 1) % image.checklist.length
+                  );
                 }}
               >
                 Next
               </button>
 
-              {currentArticleIndex > 0 || currentVideoIndex > 0 ? (
+              {currentArticleIndex > 0 || currentVideoIndex > 0 || currentChecklistIndex > 0 ? (
                 <button
                   className="bg-blue-500 mr-auto hover:bg-blue-700 text-white text-xs font-bold py-1 px-2 rounded"
                   onClick={() => {
@@ -96,6 +101,9 @@ function ProductView() {
                     );
                     setCurrentVideoIndex(
                       (currentVideoIndex - 1) % image.video.length
+                    );
+                    setCurrentChecklistIndex(
+                      (currentChecklistIndex - 1) % image.checklist.length
                     );
                   }}
                 >
@@ -137,13 +145,20 @@ function ProductView() {
 
         {/* If the product has a checklist, render a section for it */}
         {image.checklist && (
-          <div className="bg-gray-300 col-span-1 row-span-1 dark:bg-gray-900 p-4 flex uppercase gap-3 font-semibold justify-center items-center rounded-xl">
-            <h2 className="font-bold uppercase">Checklist</h2>
-            <p>|</p>
+          <div className="bg-gray-300 col-span-1 row-span-1 dark:bg-gray-900 p-4 rounded-xl">
             {/* Render a list of the checklist items */}
-            <ul className="flex gap-3">
-              {image.checklist.split(", ").map((checklist, index) => (
-                <li key={index}>{checklist}</li>
+            <ul className="flex flex-col gap-3">
+              {image.checklist.map((checklist, index) => (
+                <li key={index} className="flex items-center gap-3">
+                  <input
+                    type="checkbox"
+                    id={`checklist-${index}`}
+                    name={`checklist-${index}`}
+                  />
+                  <label htmlFor={`checklist-${index}`}>
+                    {currentChecklist.checklistItem}
+                  </label>
+                </li>
               ))}
             </ul>
           </div>

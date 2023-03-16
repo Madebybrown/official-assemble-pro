@@ -4,13 +4,7 @@ import Machinery from "../assets/static/Machinery.jpg";
 import MotorColor from "../assets/static/MotorColor.jpg";
 import Printing from "../assets/static/Printing.jpg";
 import Rework from "../assets/static/Rework.jpg";
-
-import Assemble from "../assets/static/assemble.jpg";
-import Electric from "../assets/static/electric.jpg";
-import Lava from "../assets/static/lava.jpg";
-import Line from "../assets/static/line.jpg";
-import ManWoman from "../assets/static/manwoman.jpg";
-import Slip from "../assets/static/slip.jpg";
+import Video from "../assets/static/video.mp4";
 
 const images = [
   {
@@ -53,13 +47,20 @@ const images = [
     ],
     video: [
       {
-        op: "Test 1",
+        op: Video,
       },
       {
-        op: "Test 2",
+        op: Video,
       },
     ],
-    checklist: "Test 7, Test 8, Test 9",
+    checklist: [
+      {
+        checklistItem: "Test 1",
+      },
+      {
+        checklistItem: "Test 2",
+      },
+    ],
   },
   {
     id: "2",
@@ -101,13 +102,20 @@ const images = [
     ],
     video: [
       {
-        op: "Test 3",
+        op: Video,
       },
       {
-        op: "Test 4",
+        op: Video,
       },
     ],
-    checklist: "Test 20, Test 21, Test 22",
+    checklist: [
+      {
+        checklistItem: "Test 3",
+      },
+      {
+        checklistItem: "Test 4",
+      },
+    ],
   },
   {
     id: "3",
@@ -149,13 +157,20 @@ const images = [
     ],
     video: [
       {
-        op: "Test 5",
+        op: Video,
       },
       {
-        op: "Test 6",
+        op: Video,
       },
     ],
-    checklist: "Test 32, Test 33, Test 34",
+    checklist: [
+      {
+        checklistItem: "Test 5",
+      },
+      {
+        checklistItem: "Test 6",
+      },
+    ],
   },
   {
     id: "4",
@@ -199,13 +214,20 @@ const images = [
     ],
     video: [
       {
-        op: "Test 7",
+        op: Video,
       },
       {
-        op: "Test 8",
+        op: Video,
       },
     ],
-    checklist: "test  44, test  45, test  46",
+    checklist: [
+      {
+        checklistItem: "Test 7",
+      },
+      {
+        checklistItem: "Test 8",
+      },
+    ],
   },
   {
     id: "5",
@@ -249,13 +271,20 @@ const images = [
     ],
     video: [
       {
-        op: "Test 9",
+        op: Video,
       },
       {
-        op: "Test 10",
+        op: Video,
       },
     ],
-    checklist: "test 56, test 57, test 58",
+    checklist: [
+      {
+        checklistItem: "Test 9",
+      },
+      {
+        checklistItem: "Test 10",
+      },
+    ],
   },
   {
     id: "6",
@@ -299,182 +328,21 @@ const images = [
     ],
     video: [
       {
-        op: "Test 11",
+        op: Video,
       },
       {
-        op: "Test 12",
+        op: Video,
       },
     ],
-    checklist: "test 68, test 69, test 70",
+    checklist: [
+      {
+        checklistItem: "Test 11",
+      },
+      {
+        checklistItem: "Test 12",
+      },
+    ],
   },
-  // {
-  //   id: "7",
-  //   src: Assemble,
-  //   alt: "Assemble",
-  //   articles: [
-  //     {
-  //       artnum: "60124-465",
-  //       artname: "mc6s 4x10",
-  //       amount: "4",
-  //       location: "62-01-04",
-  //     },
-  //     {
-  //       artnum: "70124-777",
-  //       artname: "nfi6s 2x10",
-  //       amount: "88",
-  //       location: "66-03-09",
-  //     },
-  //   ],
-  //   video: [
-  //     {
-  //       op: "Test 1",
-  //     },
-  //     {
-  //       op: "Test 2",
-  //     },
-  //   ],
-  //   checklist: "test 7, test 8, test 9",
-  // },
-  // {
-  //   id: "8",
-  //   src: Electric,
-  //   alt: "Electric",
-  //   articles: [
-  //     {
-  //       artnum: "34324-888",
-  //       artname: "Front Panel",
-  //       amount: "1",
-  //       location: "62-03-03",
-  //     },
-  //     {
-  //       artnum: "89462-888",
-  //       artname: "back Panel",
-  //       amount: "3",
-  //       location: "62-03-03",
-  //     },
-  //   ],
-  //   video: [
-  //     {
-  //       op: "Test 3",
-  //     },
-  //     {
-  //       op: "Test 4",
-  //     },
-  //   ],
-  //   checklist: "test 20, test 21, test 22",
-  // },
-  // {
-  //   id: "9",
-  //   src: Lava,
-  //   alt: "Lava",
-  //   articles: [
-  //     {
-  //       artnum: "92744-338",
-  //       artname: "dbwu wuw",
-  //       amount: "1",
-  //       location: "62-03-03",
-  //     },
-  //     {
-  //       artnum: "89462-888",
-  //       artname: "top Panel",
-  //       amount: "2",
-  //       location: "62-03-03",
-  //     },
-  //   ],
-  //   video: [
-  //     {
-  //       op: "Test 5",
-  //     },
-  //     {
-  //       op: "Test 6",
-  //     },
-  //   ],
-  //   checklist: "test 32, test 33, test 34",
-  // },
-  // {
-  //   id: "10",
-  //   src: Line,
-  //   alt: "Line",
-  //   articles: [
-  //     {
-  //       artnum: "88124-465",
-  //       artname: "Lock King m4",
-  //       amount: "4",
-  //       location: "62-01-04",
-  //     },
-  //     {
-  //       artnum: "82714-465",
-  //       artname: "Master m55",
-  //       amount: "8",
-  //       location: "62-01-04",
-  //     },
-  //   ],
-  //   video: [
-  //     {
-  //       op: "Test 7",
-  //     },
-  //     {
-  //       op: "Test 8",
-  //     },
-  //   ],
-  //   checklist: "test  44, test  45, test  46",
-  // },
-  // {
-  //   id: "11",
-  //   src: ManWoman,
-  //   alt: "ManWoman",
-  //   articles: [
-  //     {
-  //       artnum: "33123-465",
-  //       artname: "Spacer m4",
-  //       amount: "1",
-  //       location: "62-01-04",
-  //     },
-  //     {
-  //       artnum: "33123-465",
-  //       artname: "Skrew m4",
-  //       amount: "5",
-  //       location: "62-01-04",
-  //     },
-  //   ],
-  //   video: [
-  //     {
-  //       op: "Test 9",
-  //     },
-  //     {
-  //       op: "Test 10",
-  //     },
-  //   ],
-  //   checklist: "test 56, test 57, test 58",
-  // },
-  // {
-  //   id: "12",
-  //   src: Slip,
-  //   alt: "Slip",
-  //   articles: [
-  //     {
-  //       artnum: "88124-465",
-  //       artname: "Lock King m4",
-  //       amount: "4",
-  //       location: "62-01-04",
-  //     },
-  //     {
-  //       artnum: "82714-465",
-  //       artname: "Master m55",
-  //       amount: "8",
-  //       location: "62-01-04",
-  //     },
-  //   ],
-  //   video: [
-  //     {
-  //       op: "Test 11",
-  //     },
-  //     {
-  //       op: "Test 12",
-  //     },
-  //   ],
-  //   checklist: "test 68, test 69, test 70",
-  // },
 ];
 
 export default images;
