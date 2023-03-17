@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import images from "./Data";
 import { motion } from "framer-motion";
+import ProgressBar from "./ProgressBar";
 
 function ProductView() {
   // Get the ID of the product from the URL using the useParams hook
@@ -166,6 +167,7 @@ function ProductView() {
           </div>
         )}
       </div>
+      <ProgressBar currentVideoIndex={currentVideoIndex} totalVideos={image.video.length} />
     </motion.div>
   );
 }
