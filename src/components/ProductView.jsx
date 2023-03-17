@@ -3,6 +3,9 @@ import { useParams } from "react-router-dom";
 import images from "./Data";
 import { motion } from "framer-motion";
 import ProgressBar from "./ProgressBar";
+import VideoSection from "./VideoSection";
+import ArticleSection from "./ArticleSection";
+import ChecklistSection from "./ChecklistSection";
 
 function ProductView() {
   // Get the ID of the product from the URL using the useParams hook
@@ -52,124 +55,68 @@ function ProductView() {
 
   return (
     <motion.div
-      initial={{ opacity: 0, x: -50 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.5 }}
-      className="p-8 flex justify-center items-center h-full w-full container mx-auto"
-    >
-      <div className="grid grid-cols-2 grid-rows-2 w-full h-full gap-4">
-        {/* If the product has videos, render a section for them */}
-        {image.video && (
-          <div className="bg-gray-300 col-span-1 row-span-2 sm:col-span-2 sm:row-span-1 md:col-span-2 md:row-span-1 lg:col-span-1 lg:row-span-2 dark:bg-gray-900 p-4 flex uppercase gap-3 font-semibold justify-center items-center rounded-xl">
-            {/* Render a list of the videos */}
-            <div className="w-full h-full">
-              {image.video.map((video, index) => (
-                <div
-                  className="w-full h-full"
-                  key={index}
-                  style={{
-                    display: index === currentVideoIndex ? "block" : "none",
-                  }}
-                >
-                  <video
-                    width="100%"
-                    height="auto"
-                    controls
-                    loop
-                    muted
-                    className="block object-cover w-full h-full rounded-xl"
-                  >
-                    <source src={video.op} type="video/mp4" />
-                  </video>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
+    initial={{ opacity: 0, x: -50 }}
+    whileInView={{ opacity: 1, x: 0 }}
+    transition={{ duration: 0.5 }}
+    className="p-8 flex justify-center items-center h-full w-full container mx-auto"
+  >
+    <div className="grid grid-cols-2 grid-rows-2 w-full h-full gap-4">
+      {/* If the product has videos, render the VideoSection */}
+      {image.video && (
+        <div className="bg-gray-300 col-span-1 row-span-2 sm:col-span-2 sm:row-span-1 md:col-span-2 md:row-span-1 lg:col-span-1 lg:row-span-2 dark:bg-gray-900 p-4 flex uppercase gap-3 font-semibold justify-center items-center rounded-xl">
+          <VideoSection image={image} currentVideoIndex={currentVideoIndex} />
+        </div>
+      )}
 
-        {/* If the product has articles, render a section for them */}
-        {image.articles && (
-          <div className="bg-gray-300 col-span-1 row-span-1 dark:bg-gray-900 w-full p-4 flex flex-col uppercase font-semibold justify-between items-start rounded-xl">
-            {/* Render a list of the current article */}
-            <ul className="grid grid-cols-4 gap-4 w-full md:text-xs text-left justify-items-center">
-              <li className="col-span-1 flex flex-col mr-auto">
-                <span className="font-bold">Art.Num</span>
-                {currentArticle.artnums.map((artnumObj) => (
-                  <span
-                    key={artnumObj.artnum}
-                    className="text-blue-600 text-xs"
-                  >
-                    {artnumObj.artnum}
-                  </span>
-                ))}
-              </li>
+      {/* If the product has articles, render the ArticleSection */}
+      {image.articles && (
+        <div className="bg-gray-300 col-span-1 row-span-1 dark:bg-gray-900 w-full p-4 flex flex-col uppercase font-semibold justify-between items-start rounded-xl">
+          <ArticleSection currentArticle={currentArticle} />
 
-              <li className="col-span-1 mx-auto flex flex-col">
-                <span className="font-bold">Art.Name</span>
-                <span className="text-xs capitalize">
-                  {currentArticle.artname}
-                </span>
-              </li>
+          <div className="mt-auto flex justify-between flex-row-reverse items-end w-full">
+            <button
+              className="bg-blue-500 hover:bg-blue-700 text-white text-xs font-bold py-1 px-2 rounded ml-auto"
+              onClick={() => {
+                handleNextClick();
+              }}
+            >
+              Next
+            </button>
 
-              <li className="col-span-1 ml-auto flex flex-col">
-                <span className="font-bold">Amount</span>
-                <span className="text-xs">{currentArticle.amount}</span>
-              </li>
-
-              <li className="col-span-1 ml-auto flex flex-col">
-                <span className="font-bold">Location</span>
-                <span className="text-xs">{currentArticle.location}</span>
-              </li>
-            </ul>
-
-            <div className="mt-auto flex justify-between flex-row-reverse items-end w-full">
+            {currentArticleIndex > 0 ||
+            currentVideoIndex > 0 ||
+            currentChecklistIndex > 0 ? (
               <button
-                className="bg-blue-500 hover:bg-blue-700 text-white text-xs font-bold py-1 px-2 rounded ml-auto"
+                className="bg-blue-500 mr-auto hover:bg-blue-700 text-white text-xs font-bold py-1 px-2 rounded"
                 onClick={() => {
-                  handleNextClick()
+                  handlePrevClick();
                 }}
               >
-                Next
+                Previous
               </button>
-
-              {currentArticleIndex > 0 ||
-              currentVideoIndex > 0 ||
-              currentChecklistIndex > 0 ? (
-                <button
-                  className="bg-blue-500 mr-auto hover:bg-blue-700 text-white text-xs font-bold py-1 px-2 rounded"
-                  onClick={() => {
-                    handlePrevClick()
-                  }}
-                >
-                  Previous
-                </button>
-              ) : null}
-            </div>
+            ) : null}
           </div>
-        )}
+        </div>
+      )}
 
+      {/* If the product has a checklist, render the ChecklistSection */}
+      {image.checklist && (
+        <div className="bg-gray-300 col-span-1 row-span-1 dark:bg-gray-900 p-4 rounded">
+          <ChecklistSection
+            isChecked={isChecked}
+            handleCheckboxChange={handleCheckboxChange}
+            currentChecklist={currentChecklist}
+          />
+        </div>
+      )}
+    </div>
 
-        {/* If the product has a checklist, render a section for it */}
-        {image.checklist && (
-          <div className="bg-gray-300 col-span-1 row-span-1 dark:bg-gray-900 p-4 rounded">
-            {/* Render a list of the checklist items */}
-            <ul className="flex flex-col gap-3">
-              <li className="flex items-center gap-3">
-                <input
-                  type="checkbox"
-                  checked={isChecked}
-                  onChange={handleCheckboxChange}
-                  className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-                />
-                <label>{currentChecklist.checklistItem}</label>
-              </li>
-            </ul>
-          </div>
-        )}
-      </div>
-      <ProgressBar currentVideoIndex={currentVideoIndex} totalVideos={image.video.length} />
-    </motion.div>
-  );
+    <ProgressBar
+      currentVideoIndex={currentVideoIndex}
+      totalVideos={image.video.length}
+    />
+  </motion.div>
+);
 }
 
 export default ProductView;
