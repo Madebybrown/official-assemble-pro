@@ -32,11 +32,9 @@ export default function Navbar() {
     <div className="flex justify-between items-center px-4 w-full">
       <div className="m-4">
         <Link to="/">
-          <img
-            src={Logo}
-            alt="Jensen Logo"
-            className="h-8 select-none active:scale-95 duration-300 hover:opacity-80"
-          />
+          <h1 className="h-8 select-none active:scale-95 duration-300 hover:opacity-80 text-3xl font-bold uppercase">
+            Assemble<span className="text-blue-500">Pro</span>
+          </h1>
         </Link>
       </div>
 
