@@ -2,7 +2,7 @@ import React from "react";
 
 function ChecklistSection({ isChecked, handleCheckboxChange, currentChecklist }) {
   return (
-    <div className="h-[92%]">
+    <div className="h-[92%] sm:h-[92%] md:h-[96%] lg:h-[92%]">
       <ul className="flex flex-col gap-3">
         <li className="flex items-center gap-3">
           <input
