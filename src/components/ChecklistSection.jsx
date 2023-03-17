@@ -6,12 +6,12 @@ function ChecklistSection({
   currentChecklist,
 }) {
   return (
-    <div className="h-[92%] sm:h-[92%] md:h-[94%] lg:h-[88%]">
+    <div className="h-[88%] sm:h-[92%] md:h-[94%] lg:h-[88%]">
       <div className="w-full">
         <h2 className="text-center uppercase font-bold">Checklist</h2>
       </div>
       <div>
-        <ul className="flex flex-col gap-3">
+        <ul className="flex flex-row sm:flex-row md:flex-col lg:flex-col gap-3 ">
           <li className="flex items-center gap-3">
             <input
               type="checkbox"

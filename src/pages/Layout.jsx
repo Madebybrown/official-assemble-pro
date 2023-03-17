@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Outlet } from "react-router-dom";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
@@ -19,9 +19,9 @@ const Layout = () => {
           </main>
 
           {/* Render the Footer component */}
-          <footer className="h-20 sticky bottom-0 bg-white flex justify-center">
-            <Footer />
-          </footer>
+            <footer className="sm:block md:block lg:block h-20 sticky bottom-0 bg-white">
+              <Footer />
+            </footer>
         </div>
       </div>
     </>
