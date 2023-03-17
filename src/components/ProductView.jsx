@@ -86,7 +86,7 @@ function ProductView() {
 
             <div className="mt-auto flex justify-between flex-row-reverse items-end w-full">
               <button
-                className="bg-blue-500 hover:bg-blue-700 text-white text-xs font-bold py-1 px-2 rounded-xl ml-auto"
+                className="bg-blue-500 hover:bg-blue-700 text-white text-md font-bold py-1 px-2 rounded-xl ml-auto"
                 onClick={() => {
                   handleNextClick();
                 }}
@@ -98,7 +98,7 @@ function ProductView() {
               currentVideoIndex > 0 ||
               currentChecklistIndex > 0 ? (
                 <button
-                  className="bg-blue-500 mr-auto hover:bg-blue-700 text-white text-xs font-bold py-1 px-2 rounded-xl"
+                  className="bg-blue-500 mr-auto hover:bg-blue-700 text-white text-md font-bold py-1 px-2 rounded-xl"
                   onClick={() => {
                     handlePrevClick();
                   }}

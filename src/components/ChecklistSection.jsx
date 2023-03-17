@@ -6,7 +6,7 @@ function ChecklistSection({
   currentChecklist,
 }) {
   return (
-    <div className="h-[92%] sm:h-[92%] md:h-[96%] lg:h-[92%]">
+    <div className="h-[92%] sm:h-[92%] md:h-[94%] lg:h-[88%]">
       <div className="w-full">
         <h2 className="text-center uppercase font-bold">Checklist</h2>
       </div>
