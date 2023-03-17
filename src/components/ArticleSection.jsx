@@ -6,7 +6,7 @@ function ArticleSection({ currentArticle }) {
       <li className="col-span-1 flex flex-col mr-auto">
         <span className="font-bold">Art.Num</span>
         {currentArticle.artnums.map((artnumObj) => (
-          <span key={artnumObj.artnum} className="text-blue-600 text-xs">
+          <span key={artnumObj.artnum} className="text-blue-700 text-xs">
             {artnumObj.artnum}
           </span>
         ))}

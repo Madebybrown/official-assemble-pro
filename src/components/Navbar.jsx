@@ -33,7 +33,7 @@ export default function Navbar() {
       <div className="m-4">
         <Link to="/">
           <h1 className="h-8 select-none active:scale-95 duration-300 hover:opacity-80 text-3xl font-bold uppercase">
-            Assemble<span className="text-blue-500">Pro</span>
+            Assemble<span className="text-blue-700">Pro</span>
           </h1>
         </Link>
       </div>

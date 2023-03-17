@@ -7,11 +7,11 @@ export default function Footer() {
     <div className="flex justify-center items-center">
       <p className="text-xs text-gray-600 dark:text-white font-light flex justify-center items-center gap-1">
         {/* Year and company name */}
-        2023 AssemblePro
+        {/* 2023 AssemblePro */}
         {/* Copyright icon */} 
-        <AiOutlineCopyrightCircle />
+        {/* <AiOutlineCopyrightCircle /> */}
         {/* Creator name and all rights reserved */}
-        Madebybrown | all rights reserved.
+        {/* Madebybrown | all rights reserved. */}
       </p>
     </div>
   );
