@@ -1,9 +1,12 @@
+// Images
 import Cables from "../assets/static/Cables.jpg";
 import Laser from "../assets/static/Laser.jpg";
 import Machinery from "../assets/static/Machinery.jpg";
 import MotorColor from "../assets/static/MotorColor.jpg";
 import Printing from "../assets/static/Printing.jpg";
 import Rework from "../assets/static/Rework.jpg";
+
+// Videos
 import Video from "../assets/static/video.mp4";
 
 const images = [
@@ -47,10 +50,12 @@ const images = [
     ],
     video: [
       {
+        alt: "Kedjehjul",
         op: Video,
       },
       {
-        op: "NoVideo",
+        alt: "Spännarm",
+        op: Video,
       },
     ],
     checklist: [
@@ -102,10 +107,12 @@ const images = [
     ],
     video: [
       {
+        alt: "Teleskops Arm",
         op: Video,
       },
       {
-        op: "NoVideo",
+        alt: "Glidprofil",
+        op: Video,
       },
     ],
     checklist: [
@@ -157,10 +164,12 @@ const images = [
     ],
     video: [
       {
+        alt: "Ställdon",
         op: Video,
       },
       {
-        op: "NoVideo",
+        alt: "Motorfäste",
+        op: Video,
       },
     ],
     checklist: [
@@ -214,10 +223,12 @@ const images = [
     ],
     video: [
       {
+        alt: "Galgklappa",
         op: Video,
       },
       {
-        op: "NoVideo",
+        alt: "Glidlist",
+        op: Video,
       },
     ],
     checklist: [
@@ -271,10 +282,12 @@ const images = [
     ],
     video: [
       {
+        alt: "Bak plåt",
         op: Video,
       },
       {
-        op: "NoVideo",
+        alt: "Fram plåt",
+        op: Video,
       },
     ],
     checklist: [
@@ -328,10 +341,12 @@ const images = [
     ],
     video: [
       {
+        alt: "Höger fil",
         op: Video,
       },
       {
-        op: "NoVideo",
+        alt: "Vänster fil",
+        op: Video,
       },
     ],
     checklist: [

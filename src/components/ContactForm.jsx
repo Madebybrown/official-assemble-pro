@@ -11,12 +11,12 @@ export default function ContactForm() {
   }
   return (
     <div>
-      <section className="bg-gray-100 dark:bg-black p-6 rounded-xl">
+      <section className="bg-gray-100 p-6 rounded-xl">
         <div className="px-4 py-2 mx-auto max-w-screen-md">
-          <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">
+          <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900">
             Contact Us
           </h2>
-          <p className="mb-8 lg:mb-10 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl">
+          <p className="mb-8 lg:mb-10 font-light text-center text-gray-500 sm:text-xl">
             Got a technical issue? Want to send feedback about a beta feature?
             Need details about how{" "}
             <span className="font-bold">AssemblePro</span> works? Let us know.
@@ -27,7 +27,7 @@ export default function ContactForm() {
             <div>
               <label
                 htmlFor="email"
-                className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                className="block mb-2 text-sm font-medium text-gray-900"
               >
                 Email Address
               </label>
@@ -35,7 +35,7 @@ export default function ContactForm() {
                 id="email"
                 type="email"
                 name="email"
-                className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+                className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5"
                 placeholder="Enter Email"
                 required
               />

@@ -52,6 +52,7 @@ function ProductView() {
 
   const currentArticle = image.articles[currentArticleIndex];
   const currentChecklist = image.checklist[currentChecklistIndex];
+  const currentVideo = image.video[currentVideoIndex];
 
   return (
     <motion.div
@@ -112,6 +113,7 @@ function ProductView() {
       </div>
 
       <ProgressBar
+        currentVideo={currentVideo}
         currentVideoIndex={currentVideoIndex}
         totalVideos={image.video.length}
       />
